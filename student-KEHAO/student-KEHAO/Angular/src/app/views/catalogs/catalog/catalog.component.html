@@ -1,0 +1,30 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+ 
+    <div class="form-group">
+      <label>ENGLISH NAME</label>
+      <input name="NAME_EN" #NAME_EN="ngModel" [(ngModel)]="service.formData.NAME_EN" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>VIETNAMESE NAME</label>
+      <input name="NAME_VI" #NAME_VI="ngModel" [(ngModel)]="service.formData.NAME_VI" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>SQUENCE NUMBER</label>
+        <input name="SQUENCE_NUM" #SQUENCE_NUM="ngModel" [(ngModel)]="service.formData.SQUENCE_NUM" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>NOTE</label>
+        <textarea name="NOTE" #NOTE="ngModel" [(ngModel)]="service.formData.NOTE" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <select name="INTYPE_ID" #INTYPE_ID="ngModel" [(ngModel)]="service.formData.INTYPE_ID" class="form-control">
+          <option value="0" selected>PLEASE CHOOSE TYPE</option>
+          <option value="1">CHECKBOX</option>
+          <option value="2">INPUT TEXT</option>
+        </select>
+    </div>
+    <input type="hidden" name="STATUS" #STATUS="ngModel" [(ngModel)]="service.formData.STATUS">
+    <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-block bg-primary text-light">SUBMIT</button>
+    </div>
+  </form>

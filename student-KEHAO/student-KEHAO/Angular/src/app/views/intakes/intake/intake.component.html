@@ -1,0 +1,25 @@
+<form #form="ngForm" autocomplete="off" >
+  <div class="form-group">
+      <label for="">Catalogy</label>
+      <select class="form-control" name="CATA_ID" #CATA_ID="ngModel" [(ngModel)]="service.formData.CATA_ID" >
+        <option *ngFor="let cata of service.list1" [ngValue]="cata.CATA_ID">[{{2000+cata.YEAR_START_ID}} - {{2000+cata.YEAR_END_ID}}]</option>
+    
+      </select>
+    </div>
+
+<div class="form-group">
+  <label for="">Intake Code</label>
+<input type="text" name="INTAKE_CODE"  [(ngModel)]="service.formData.INTAKE_CODE" class="form-control">
+</div>
+<div class="form-group">
+  <label for="">Intake Name</label>
+<input type="text" name="INTAKE_NAME" [(ngModel)]="service.formData.INTAKE_NAME" class="form-control">
+</div>
+<input type="hidden" name="STATUS"  [(ngModel)]="service.formData.STATUS">
+<div class="form-group pull-left">
+<button type="button" (click)="resetForm()" class="btn btn-danger btn-block">RESET</button>
+</div>
+<div class="form-group pull-right">
+<button type="button" [disabled]="form.invalid"  (click)="onSubmit(form)"  data-dismiss="modal" class="btn btn-info btn-block">SUBMIT</button>
+</div>
+</form>

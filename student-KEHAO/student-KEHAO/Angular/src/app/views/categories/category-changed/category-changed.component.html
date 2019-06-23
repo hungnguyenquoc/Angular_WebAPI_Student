@@ -1,0 +1,40 @@
+<form #form="ngForm" autocomplete="off" >
+  <input type="hidden" name="CATE_ID" #CATE_ID="ngModel" [(ngModel)]="service.formData.CATE_ID">
+  <div class="form-group">
+    <label>ENGLISH NAME</label>
+    <input name="NAME_EN" #NAME_EN="ngModel" [(ngModel)]="service.formData.NAME_EN" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>VIETNAMESE NAME</label>
+    <input name="NAME_VI" #NAME_VI="ngModel" [(ngModel)]="service.formData.NAME_VI" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>SQUENCE NUMBER</label>
+      <input name="SQUENCE_NUM" #SQUENCE_NUM="ngModel" [(ngModel)]="service.formData.SQUENCE_NUM" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>NOTE</label>
+      <textarea name="NOTE" #NOTE="ngModel" [(ngModel)]="service.formData.NOTE" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+      <label>TYPE</label>
+      <select name="INTYPE_ID" #INTYPE_ID="ngModel" [(ngModel)]="service.formData.INTYPE_ID" class="form-control">
+        <option value="1">CHECKBOX</option>
+        <option value="2">INPUT TEXT</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label>STATUS</label>
+      <select name="STATUS" #STATUS="ngModel" [(ngModel)]="service.formData.STATUS" class="form-control">
+          <option value="1">ACTIVE EN</option>
+          <option value="2">ACTIVE VN</option>
+        <option value="0">BANNED</option>
+      </select>
+  </div>
+  <div class="form-group pull-left">
+      <button type="button" (click)="loadForm()" class="btn btn-danger btn-block">RESET</button>
+    </div>
+    <div class="form-group pull-right">
+      <button type="button" [disabled]="form.invalid" (click)="onSubmit(form)"  data-dismiss="modal" class="btn btn-info btn-block">SUBMIT</button>
+    </div>
+</form>
